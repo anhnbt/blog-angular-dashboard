@@ -20,3 +20,6 @@ ng generate component auth
 --profile-settings
 
 ng build --prod --aot
+
+# Update
+ng update @angular/core@14 @angular/cli@14
