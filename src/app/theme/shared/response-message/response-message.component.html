@@ -1,0 +1,9 @@
+<div *ngIf="data?.success" class="alert alert-danger">
+    <p>Errors:</p>
+    <ul>
+        <li class="notice notice-error" *ngFor="let error of data.errors">{{ error.message }}</li>
+    </ul>
+</div>
+<div *ngIf="data?.success" class="alert alert-success">
+    <span class="notice notice-success">{{ data.message }}</span>
+</div>
