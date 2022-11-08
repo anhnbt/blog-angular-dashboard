@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AuthComponent } from './theme/layout/auth/auth.component';
-import { UnAuthGuard } from './un-auth.guard';
+import {UnAuthGuard} from "./un-auth.guard";
 
 const routes: Routes = [
   {
@@ -12,12 +11,8 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: 'signin',
-    component: AuthComponent,
-    data: {
-      title: "Sign in"
-    },
-    children: []
+    path: 'auth',
+    loadChildren: () => import('./theme/layout/auth/auth.module').then(m => m.AuthModule)
   },
   {
     path: '**',

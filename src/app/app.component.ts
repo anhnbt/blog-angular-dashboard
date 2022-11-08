@@ -4,6 +4,8 @@ import { ActivatedRoute, NavigationCancel, NavigationEnd, NavigationError, Navig
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { filter, map, Observable, of } from 'rxjs';
 import { AppSettings } from './app-settings';
+import {IconSetService} from "@coreui/icons-angular";
+import {iconSubset} from "./icons/icon-subset";
 
 @Component({
   selector: 'app-root',
@@ -16,8 +18,12 @@ export class AppComponent implements OnInit {
   constructor(
     private title: Title,
     private router: Router,
-    public jwtHelper: JwtHelperService
-  ) { }
+    public jwtHelper: JwtHelperService,
+    private iconSetService: IconSetService
+  ) {
+    // iconSet singleton
+    iconSetService.icons = { ...iconSubset };
+  }
 
   ngOnInit(): void {
     this.loading$ = this.router.events.pipe(

@@ -34,3 +34,24 @@ ng build --prod --aot
 
 # Update
 ng update @angular/core@14 @angular/cli@14
+
+## Install CoreUI
+```npm install @angular/cdk```
+
+```npm install @coreui/angular@4```
+
+```npm install @coreui/coreui```
+
+```npm install @coreui/icons-angular```
+
+```npm install @coreui/icons```
+```npm install ngx-perfect-scrollbar```
+
+## 👇️ delete node_modules and package-lock.json
+rm -rf node_modules
+rm -f package-lock.json
+
+## 👇️ clean npm cache
+npm cache clean --force
+
+npm install

@@ -1,1 +1,4 @@
-<img *ngIf="isLoading" src="/assets/images/loader.svg" width="22" height="22" alt="Loading...">
+<ng-container *ngIf="isLoading">
+  <c-spinner size="sm" color="dark" aria-hidden="true"></c-spinner>
+  Loading...
+</ng-container>

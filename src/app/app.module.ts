@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AuthComponent } from './theme/layout/auth/auth.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthGuard } from './auth.guard';
@@ -12,24 +11,38 @@ import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from "@auth0/angular-jwt";
 import { ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from './theme/shared/shared.module';
+import {CoreModule} from "./core/core.module";
+import { IconModule, IconSetService } from '@coreui/icons-angular';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {SharedModule} from "./theme/shared/shared.module";
+import {ButtonModule} from "@coreui/angular";
+import {
+  PERFECT_SCROLLBAR_CONFIG,
+  PerfectScrollbarConfigInterface,
+  PerfectScrollbarModule,
+} from 'ngx-perfect-scrollbar';
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 export function tokenGetter() {
   return localStorage.getItem("access_token");
 }
 
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+  suppressScrollX: true,
+};
+
 @NgModule({
   declarations: [
     AppComponent,
-    AuthComponent,
     NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SharedModule,
+    CoreModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter,
@@ -37,8 +50,21 @@ export function tokenGetter() {
         disallowedRoutes: [""],
       },
     }),
+    IconModule,
+    SharedModule,
+    ButtonModule,
+    PerfectScrollbarModule
   ],
-  providers: [CookieService, AuthGuard, UnAuthGuard, AuthService],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy,
+    },
+    {
+      provide: PERFECT_SCROLLBAR_CONFIG,
+      useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
+    },
+    CookieService, IconSetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
