@@ -14,7 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {CoreModule} from "./core/core.module";
 import { IconModule, IconSetService } from '@coreui/icons-angular';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {SharedModule} from "./theme/shared/shared.module";
+import {BlogSharedModule} from "./theme/shared/blog-shared.module";
 import {ButtonModule} from "@coreui/angular";
 import {
   PERFECT_SCROLLBAR_CONFIG,
@@ -51,7 +51,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
       },
     }),
     IconModule,
-    SharedModule,
+    BlogSharedModule,
     ButtonModule,
     PerfectScrollbarModule
   ],

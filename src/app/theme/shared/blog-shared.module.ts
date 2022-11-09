@@ -38,4 +38,4 @@ import {IconModule} from "@coreui/icons-angular";
     IconModule,
   ]
 })
-export class SharedModule { }
+export class BlogSharedModule { }
