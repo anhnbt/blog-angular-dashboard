@@ -3,6 +3,7 @@
   #sidebar="cSidebar"
   class="d-print-none sidebar sidebar-fixed"
   id="sidebar"
+  [unfoldable]="false"
   visible
 >
   <c-sidebar-brand
@@ -22,7 +23,6 @@
   >
   </c-sidebar-brand>
   <perfect-scrollbar [config]="perfectScrollbarConfig">
-    <!--  [perfectScrollbar]="perfectScrollbarConfig"-->
     <c-sidebar-nav
       [navItems]="navItems"
     >
@@ -30,7 +30,7 @@
   </perfect-scrollbar>
   <c-sidebar-toggler
     *ngIf="!sidebar.narrow"
-    toggle="unfoldable"
+    [toggle]="'unfoldable'"
     cSidebarToggle="sidebar"
   ></c-sidebar-toggler>
 </c-sidebar>
