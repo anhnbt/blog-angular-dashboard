@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
-import {DASH} from "@angular/cdk/keycodes";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 
 const routes: Routes = [
