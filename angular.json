@@ -91,6 +91,9 @@
             },
             "development": {
               "browserTarget": "blog-angular-dashboard:build:development"
+            },
+            "staging": {
+              "browserTarget": "blog-angular-dashboard:build:staging"
             }
           },
           "defaultConfiguration": "development"
