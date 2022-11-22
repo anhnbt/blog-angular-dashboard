@@ -31,6 +31,7 @@ ng generate component auth
 --profile-settings
 
 ng build --prod --aot
+ng build --configuration=staging
 
 # Update
 ng update @angular/core@14 @angular/cli@14
