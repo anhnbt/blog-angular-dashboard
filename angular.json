@@ -34,6 +34,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/shepherd.js/dist/css/shepherd.css",
               "src/styles.scss"
             ],
             "scripts": [],

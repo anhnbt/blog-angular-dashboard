@@ -5,7 +5,7 @@ import {AdminRoutingModule} from './admin-routing.module';
 import {AdminComponent} from './admin.component';
 import {NavigationComponent} from './navigation/navigation.component';
 import {NavBarComponent} from './nav-bar/nav-bar.component';
-import {BlogSharedModule} from "../../shared/blog-shared.module";
+import {BlogSharedModule} from "../../../shared/blog-shared.module";
 import {
   AvatarModule,
   BadgeModule, BreadcrumbModule,
@@ -20,6 +20,7 @@ import {FooterComponent} from './footer/footer.component';
 import {PerfectScrollbarModule} from "ngx-perfect-scrollbar";
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {ChartjsModule} from "@coreui/angular-chartjs";
+import { ShepherdComponent } from './shepherd/shepherd.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import {ChartjsModule} from "@coreui/angular-chartjs";
     NavigationComponent,
     NavBarComponent,
     FooterComponent,
-    DashboardComponent
+    DashboardComponent,
+    ShepherdComponent
   ],
   imports: [
     CommonModule,

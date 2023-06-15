@@ -1,16 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {DateUtils} from "../shared/utils/date-utils";
 
+import { ContactRoutingModule } from './contact-routing.module';
 
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule
-  ],
-  exports: [
-
+    CommonModule,
+    ContactRoutingModule
   ]
 })
-export class CoreModule { }
+export class ContactModule { }

@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
+/* App Root */
 import { AppComponent } from './app.component';
+
+/* Routing Module */
+import { AppRoutingModule } from './app-routing.module';
+
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CookieService } from 'ngx-cookie-service';
-import { AuthGuard } from './auth.guard';
-import { UnAuthGuard } from './un-auth.guard';
-import { AuthService } from './auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from "@auth0/angular-jwt";
 import { ReactiveFormsModule } from '@angular/forms';
 import {CoreModule} from "./core/core.module";
 import { IconModule, IconSetService } from '@coreui/icons-angular';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {BlogSharedModule} from "./theme/shared/blog-shared.module";
+import {BlogSharedModule} from "./shared/blog-shared.module";
+
+/* Feature Modules */
 import {ButtonModule} from "@coreui/angular";
 import {
   PERFECT_SCROLLBAR_CONFIG,
